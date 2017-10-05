@@ -29,7 +29,6 @@ import 'animate.css/animate.min.css'
 new Vue({
 	el: '#app',
 	router,
-	store,
 	template: '<App/>',
 	components: { App }
 })
