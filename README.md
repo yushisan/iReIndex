@@ -1,4 +1,4 @@
-# iReData
+# iReIndex
 
 ## 下载及安装
 ```
