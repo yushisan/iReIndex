@@ -26,7 +26,7 @@ Vue + Vue-cli + Vue-router + Axios + Element-ui + Echarts
 ```
 - 数据可视化
 ```
-借助 Echarts 完成对对数据的二次加工图形化
+借助 Echarts 完成对数据的二次加工图形化
 ```
 - 数据对比
 ```
