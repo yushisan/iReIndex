@@ -28,6 +28,10 @@ Vue + Vue-cli + Vue-router + Axios + Element-ui + Echarts
 ```
 借助 Echarts 完成对数据的二次加工图形化
 ```
+- 懒加载
+```
+信息列表部分写了个自定义指令 v-lazyLoad 根据组件滚动时最后一条信息与底边距离判断是否需要加载更多信息
+```
 - 数据对比
 ```
 在 App指数 和 PC指数 分类中，可以添加最多5条信息进行比较（可选择日期和类别）
@@ -41,5 +45,31 @@ Vue + Vue-cli + Vue-router + Axios + Element-ui + Echarts
 通过搜索框可以快速查找指定信息
 ```
 
+
 ## 数据来源
 艾瑞数据 http://data.iresearch.com.cn
+
+## API接口
+由于官方没有开放免费的接口，所以只能在官网一点一点自己扒出来了
+
+## 项目中遇到的问题
+- 数据可视化（数据→图表即时更新部分）  
+
+  为了还原原网站图表效果，项目中使用了之前从未接触过的图表组件 Echarts，还原过程是比较痛苦的，啃了两天文档还是做出来了。  
+  
+  搜遍 Echarts 文档没找到即时更新图表的方法，所以只能自己写一个，也很简单，methods 里写一个 updateChart 方法用于重置图表，在 watch 里监测数据 data ，一旦 data 改变，就重新渲染图表。
+```
+methods: {
+    updateChart() {
+        /*
+        *中间过程省略
+        **/
+        this.myChart.setOption(option,true);
+    }
+},
+watch: {
+    data() {
+    	this.updateChart();
+    }
+}
+```
