@@ -1,9 +1,12 @@
 # iReIndex
 
-## 下载及安装
+## 下载、安装及本地运行
 ```
 $ git clone git@github.com:Dark-Chef-K/iReIndex.git
+
 $ npm install
+
+$ npm run dev
 ```
 
 ## 项目简介
