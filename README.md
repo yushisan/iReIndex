@@ -4,6 +4,7 @@
 ```
 $ git clone git@github.com:Dark-Chef-K/iReIndex.git
 
+$ cd iReIndex
 $ npm install
 
 $ npm run dev
