@@ -61,9 +61,11 @@ Vue + Vue-cli + Vue-router + Axios + Element-ui + Echarts
 ```
 methods: {
     updateChart() {
+        var option = {
         /*
-        *中间过程省略
-        **/
+        *数据处理过程省略
+        **/ 
+        };
         this.myChart.setOption(option,true);
     }
 },
@@ -73,3 +75,13 @@ watch: {
     }
 }
 ```
+- 数据请求过程中，子组件数据报错 undefined  
+这个报错虽然不影响后面页面渲染，但是看着很不舒服  
+解决办法：在子组件上用 v-if 绑定传入的数据，数据不为 null && length != 0 时再渲染
+```
+<map-chart :attrData="attrData" v-if="attrData && attrData.length != 0"></map-chart>
+<p v-if="!(attrData && attrData.length != 0)" class="noData">暂无数据</p>
+```
+## 部分截图
+
+![image](https://github.com/Dark-Chef-K/iReIndex/blob/master/%E6%88%AA%E5%9B%BE.jpg?raw=true)
